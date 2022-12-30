@@ -34,11 +34,11 @@ function Search(item) {
   } 
   
   else {
-    // render the complete list
+    
     details.forEach(add);
   }
 }
-//const searchInput = document.querySelector("#search");
+
 
 searchInput.addEventListener("input", Search);
 
@@ -53,8 +53,8 @@ function sortData(item) {
   if (previouslyClicked) {
     previouslyClicked.classList.toggle("active");
   }
- // event.target.classList.toggle("active");
-  //let id = event.target.id;
+ 
+ 
   if (id == "descending") {
     details.sort((a, b) => b.name.localeCompare(a.name));
     details.forEach(add);
@@ -124,19 +124,17 @@ form.addEventListener("submit",Search);
 
 
 function add(student, k) {
-    // there are multiple insertions going to happen (leading to duplicates) thus, reset the table first.
-  /*  if (i == 0) {
-      tbody.innerText = "";
-    }*/
+   
+ 
     const data = Object.values(student);
     const tr = document.createElement("tr");
   
-    //const data = Object.values(student);
+   
   
     for (let k = 0; k < data.length; k++) {
       if (k == 2) continue;
       if (k == 1) {
-        // inserting name
+       
         const nameTd = document.createElement("td");
         nameTd.innerHTML = `<img src=${student.imgSrc} alt="photo"/> <span>${student.name}</span>`;
         tr.append(nameTd);
